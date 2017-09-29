@@ -31,7 +31,8 @@ const Header = (props) => {
       <div className="stopwatch">
         <h2>atopht</h2>
         <h1 className="stopwatch-time">0</h1>
-        <button>Basic</button><button>Basic</button>
+        <button>B</button>
+        <button>m</button>
       </div>
     </div>
   )
@@ -44,8 +45,11 @@ const PlayerList = (props) => {
         return (
           <div className="player">
             <div className="player-name">{dato.name}</div>
-            <div className="player-score">{dato.score}</div>
-          </div>
+            <div className="player-score counter">
+            <button className="counter-action decrement btn">-</button>
+            <p className="counter-score">{dato.score}</p>
+            <button className="counter-action increment btn">+</button>          </div>
+        </div>
         )
       })
     }
@@ -56,14 +60,14 @@ const PlayerList = (props) => {
 let PlayerForm = React.createClass({
   render: function () {
     return (
-      <div className="counter-score">
+      
         <div className="add-player-form">
+          <form>
           <input type="text"/>
-        </div>
-        <div className="add-player-form form">
           <input type="submit"/>
+          </form>
         </div>
-      </div>
+      
     )
   }
 })
@@ -73,7 +77,7 @@ const Application = ({ title, players }) => {
     <div className="scoreboard">
       <Header players={players} />
       <PlayerList players={players} />
-      {/* <PlayerForm /> */}
+      <PlayerForm />
     </div>
   );
 }
