@@ -72,13 +72,31 @@ let PlayerList = React.createClass({
   }
 })
 
+let PlayerForm = React.createClass({
+  render: function () {
+    return (
+      <div id="container">
+      <di class="row">
+        <div class="col-md-10">
+            <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />            
+        </div>
+        <div class="col-md-2">
+            <button type="button" className="btn">Basic</button>            
+        </div>
+      </di>
+    </div>
+    )
+  }
+})
+
+
 
 const Application = ({ title, players }) => {
   return (
     <div>
       <Header players={players} />
       <PlayerList players={players} />
-      {/* <PlayerForm />  */}
+      <PlayerForm /> 
     </div>
   );
 }
