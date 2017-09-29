@@ -53,20 +53,20 @@ const PlayerList = (props) => {
   )
 }
 
-// let PlayerForm = React.createClass({
-//   render: function () {
-//     return (
-//       <div className="counter-score">
-//         <div className="add-player-form">
-//           <input type="text"/>
-//         </div>
-//         <div className="add-player-form form">
-//           <input type="submit"/>
-//         </div>
-//       </div>
-//     )
-//   }
-// })
+let PlayerForm = React.createClass({
+  render: function () {
+    return (
+      <div className="counter-score">
+        <div className="add-player-form">
+          <input type="text"/>
+        </div>
+        <div className="add-player-form form">
+          <input type="submit"/>
+        </div>
+      </div>
+    )
+  }
+})
 
 const Application = ({ title, players }) => {
   return (
