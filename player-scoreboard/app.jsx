@@ -20,21 +20,16 @@ let Header = React.createClass({
   render: function () {
     return (
       <div className="header">
-        <div className="row">
-          <div className="col-md-8">
-            <p>PLAYERS:3</p>
-            <p>TOTAL:180</p>
-          </div>
-          <div className="col-md-4">
-            <p>atopht</p>
-            <p>0</p>
-            <div className="col-md-6">
-              <button type="button" className="btn">Basic</button>
-              <button type="button" className="btn">Basic</button>
-            </div>
-          </div>
+        <div className="stats">
+          <tr><td>PLAYERS:3</td></tr>
+          <tr><td>TOTAL:180</td></tr>
         </div>
-      </div>
+        <div className="stopwatch">
+          <h2>atopht</h2>
+          <h1 className="stopwatch-time">0</h1>
+          <button>Basic</button><button>Basic</button>
+        </div>
+    </div>
     )
   }
 })
@@ -43,17 +38,17 @@ let PlayerList = React.createClass({
   render: function () {
     return (
       <div className="player">
-        <div className="row">
-          <div className="col-md-8">
+        
+          <div className="counter-score ">
             <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />
             <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />
             <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />
           </div>
-          <div className="col-md-4">
-            <div className="input-group">
-              <span className="input-group-addon">$</span>
-              <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
-              <span className="input-group-addon">$</span>
+          <div className="player-score">
+            <div className="counter-action">
+              <span className="decrement">$</span>
+              <input type="text" className="counter-score" aria-label="Amount (to the nearest dollar)" />
+              <span className="increment">$</span>
             </div>
             <div className="input-group">
               <span className="input-group-addon">$</span>
@@ -66,7 +61,7 @@ let PlayerList = React.createClass({
               <span className="input-group-addon">$</span>
             </div>
           </div>
-        </div>
+       
       </div>
     )
   }
@@ -75,28 +70,26 @@ let PlayerList = React.createClass({
 let PlayerForm = React.createClass({
   render: function () {
     return (
-      <div id="container">
-      <di class="row">
-        <div class="col-md-10">
-            <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />            
-        </div>
-        <div class="col-md-2">
-            <button type="button" className="btn">Basic</button>            
-        </div>
-      </di>
-    </div>
+      <div className="counter-score">
+      
+          <div className="add-player-form">
+            <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+          </div>
+          <div className="add-player-form form">
+            <button type="button" className="btn">Basic</button>
+          </div>
+       
+      </div>
     )
   }
 })
-
-
 
 const Application = ({ title, players }) => {
   return (
     <div>
       <Header players={players} />
       <PlayerList players={players} />
-      <PlayerForm /> 
+      <PlayerForm />
     </div>
   );
 }
